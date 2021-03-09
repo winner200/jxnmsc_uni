@@ -1,0 +1,49 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/global/login/login",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/profile/profile",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/global/login-tel/login-tel"
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "食用农产品智慧优选通道",
+		"navigationBarBackgroundColor": "#2EDC70",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list" : [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/images/tabbar/home.png",
+			"selectedIconPath": "static/images/tabbar/home_active.png",
+			"text": "组件2"
+		},
+		{
+			"pagePath": "pages/profile/profile",
+			"iconPath": "static/images/tabbar/profile.png",
+			"selectedIconPath": "static/images/tabbar/profile_active.png",
+			"text": "组件2"
+		}]
+	}
+}

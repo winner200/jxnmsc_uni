@@ -1,0 +1,83 @@
+/* pages/global/login-tel/login-tel.wxss */
+.body{
+  position: relative;
+}
+.body-background{
+  width: 100%;
+  height: 100%;
+}
+.body-content{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+.bidy-content-logo view{
+  width: 100%;
+  display: flex;
+  flex-flow: nowrap;
+  align-items: center;
+  border-bottom: 1px solid #cdcdcd;
+  height: 50px;  
+}
+.bidy-content-logo view input{
+  margin: 0px 0px 0px 15px;
+}
+.touxiangkuang{
+  width: 100px;
+  height: 100px;
+}
+.ipone{
+  width: 20px;
+  height: 25px;
+}
+.password{
+  width: 20px;
+  height: 25px;
+}
+.pler-account{
+  font-size: 28rpx;
+  color: #cdcdcd;
+}
+.button-logo{
+  width: 220px;
+  height: 35px;
+  line-height: 35px;  
+  align-items: center;
+  /* background: linear-gradient(to right,#F6B93E, #FE5834); */
+  background-color:#2EDC70;
+  color: #ffff;
+  border-radius: 30px;
+  font-size: 32rpx;
+  margin-top: 20px;
+}
+/* 角色选择下拉框 */
+.selectPicker {
+  display: flex;
+  overflow: hidden;
+  margin: 0px 0px 0px 15px;
+  font-size: 13px;
+}
+.section__title {
+  margin-left: 15px;
+}
+.picker {
+  color: #cdcdcd;
+}
+.placeholderStyle {
+  color: #cdcdcd;
+}
+/*输入框*/
+.nameImage {
+  margin-left: 30rpx;
+  width: 50rpx;
+  height: 60rpx
+}
+.radio {
+  width: 90px;
+}

@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/global/login/login",
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/global/login-tel/login-tel"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "食用农产品智慧优选通道",
+    "navigationBarBackgroundColor": "#2EDC70",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home_active.png",
+        "text": "组件2"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "static/images/tabbar/profile.png",
+        "selectedIconPath": "static/images/tabbar/profile_active.png",
+        "text": "组件2"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

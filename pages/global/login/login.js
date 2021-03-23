@@ -100,7 +100,7 @@ export default {
 		 //市场监督管理局
 		 skipExternalCheck() {
 			// registerFlag = 1 登录时标识 -- 显示选择日检、巡检
-			console.log('我到这了哈哈哈')
+			console.log('市场监督管理局--registerFlag')
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?registerFlag=1'
 			})
@@ -109,6 +109,7 @@ export default {
 		//检测中心登录
 		skipDailyCheck() {
 			//清空检疫ID
+      console.log('检测中心登录--registerFlag')
 			uni.removeStorage({
 				key: 'quarantineID',
 				success(res){
@@ -123,6 +124,7 @@ export default {
 		
 		 //检疫中心登录
 		 skipSlaughter() {
+       console.log('检疫中心登录--registerFlag')
 			 // registerFlag = 1 登录时标识 -- 显示选择日检、巡检
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?registerFlag=3'
@@ -131,6 +133,7 @@ export default {
 		
 		 //批发农贸市场登录
 		 skipInteriorCheck() {
+       console.log('批发农贸市场登录--rid')
 			//rid=3 内部自检
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?rid=3'
@@ -140,6 +143,7 @@ export default {
 		
 		 //屠宰单位登录
 		 skipWholesaler() {
+       console.log('屠宰单位登录--slaughteID')
 			uni.navigateTo({
 				// url: '/pages/global/reg-supplier/reg-supplier?outletsType=3'
 				url: '/pages/global/login-tel/login-tel?slaughteID=3'
@@ -147,6 +151,7 @@ export default {
 		},
 		 //种植/养殖源头登录
 		 skipSkipProduction() {
+       console.log('种植/养殖源头--outletsType')
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?outletsType=4'
 			})
@@ -154,6 +159,7 @@ export default {
 		
 		//批发商登录
 		skipSkipMerchant() {
+      console.log('批发商登录--outletsType')
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?outletsType=3'
 			})
@@ -161,7 +167,7 @@ export default {
 		
 		//网点商家、商家、企业、院校登录
 		skipSkipBranch() {
-			console.log('网点商家');
+			console.log('网点商家登录--outletsType');
 			uni.navigateTo({
 				url: '/pages/global/login-tel/login-tel?outletsType=1'
 			})

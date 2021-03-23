@@ -7,7 +7,8 @@ module.exports = {
 				'components': '@/components',
 				'network': '@/network',
 				'pages': '@/pages',
-				'config': '@/config'
+				'config': '@/config',
+        'contentComps': '@/content-comps'
 			}
 		}
 	}

@@ -59,14 +59,14 @@
 	    <button class="button-logo" @click="handleLogin">立即登录</button>
 	  </view>
 		<uni-popup ref="popup" type="dialog">
-		    <uni-popup-dialog 
-					type="error" 
-					message="成功消息" 
-					:duration="2000" 
-					:before-close="true" 
-					:content="errMessage || '默认提示'" 
-					@close="close" 
-					@confirm="confirm"></uni-popup-dialog>
+		  <uni-popup-dialog 
+        type="error" 
+        message="成功消息" 
+        :duration="2000" 
+        :before-close="true" 
+        :content="errMessage || '默认提示'" 
+        @close="close" 
+        @confirm="confirm"></uni-popup-dialog>
 		</uni-popup>
 	</view>
 </template>

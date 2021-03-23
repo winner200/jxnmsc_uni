@@ -15,6 +15,16 @@ const markerName = '通景大厦'
 //图片地址路径
 const imageUrl = 'https://www.shiyoutong.cn/sznmdistfile/'
 
+// 公共参数
+const globalData = {
+  userInfo: null,
+  reportPatch: '', //图片路径
+  //调用接口公共参数
+  loginKey: 1,
+  appType: '2',
+  systemID: 2
+  }
+
 module.exports = {
   //subKey: subKey,
   apiUrl: apiUrl,
@@ -22,5 +32,6 @@ module.exports = {
   latitude: latitude,
   longitude: longitude,
   markerName: markerName,
-  imageUrl: imageUrl
+  imageUrl: imageUrl,
+  globalData: globalData
 }

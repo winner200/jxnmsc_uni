@@ -1,0 +1,31 @@
+<!--pages/operate/inspect/inspect.wxml-->
+<template>
+  <view>
+    <Cinspect
+      insUnitName="单位名称wdebug--日检"
+      insTodayName="抽检市场"
+      bazaarClass="市场类型"
+      insMerchant="市场商家"
+      insGoods="抽检样品"
+      insCheckClass="检测项"
+      insResult="抽检结果"
+      insCheckName="抽检人"
+      insCheckNamePlc="请输入检测人"
+      insGoodsPlaceholder="抽检样品"
+      @uploadFile="uploadFileImg"
+      @sumitSave="sumitSave"
+      @selectBazaar="selectBazaar"
+      @radioChange="radioChange"
+      :reportImg="reportImg"
+      :currentTime="currentTime"
+      :insTodayArray="bazaarList"
+      :insMerchantArray="merchantList">
+    </Cinspect>
+  </view>
+</template>
+<script>
+  import inspect from './inspect.js'
+  export default {
+    ...inspect
+  }
+</script>

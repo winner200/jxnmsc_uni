@@ -1,13 +1,11 @@
-const app = getApp();
-
 const httpPromiseRequest = (url, options, headers = "application/json;") => {
   return new  Promise((resolve, reject) => {
-    wx.showLoading({
+    uni.showLoading({
       title: '数据加载中',
       icon: 'loading'
     });
-    wx.request({
-      url:url,
+    uni.request({
+      url: url,
       method: options.method,
       data: options.data,
       header:{
@@ -22,11 +20,11 @@ const httpPromiseRequest = (url, options, headers = "application/json;") => {
            //请求失败
           reject(result);
         }
-        wx.hideLoading();//关闭loading
+        uni.hideLoading();//关闭loading
       },
       fail(error) {
         reject(error);
-        wx.hideLoading();//关闭loading
+        uni.hideLoading();//关闭loading
       }
     })
   })
@@ -35,7 +33,6 @@ const httpPromiseRequest = (url, options, headers = "application/json;") => {
 const getPromise = (url, options = {}) => {
   return httpPromiseRequest(url, {method:'GET', data:options})
 }
-
 //post请求
 const post = (url,options = {},headers) => {
   return httpPromiseRequest(url,{method:'POST', data:options}, headers)

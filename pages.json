@@ -3,7 +3,7 @@
 		{
 			"path": "pages/global/login/login",
 			"style": {
-				
+
 			}
 		},
 		{
@@ -22,6 +22,21 @@
 			"path": "pages/global/login-tel/login-tel"
 		}
 	],
+	"subPackages":[{
+		"root": "pages/bazaar-rijian/pages",
+		"pages": [
+      {
+        "path": "index/index",
+        "style": {}
+      },
+      {
+        "path": "inspect/inspect",
+        "style": {
+          "navigationBarTitleText": "日检录入"
+        }
+      }
+    ]
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "食用农产品智慧优选通道",

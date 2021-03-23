@@ -822,7 +822,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1923,9 +1923,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 17:
-/*!***********************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/pages/global/login/login.js ***!
-  \***********************************************************/
+/*!*********************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/pages/global/login/login.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2032,7 +2032,7 @@ function normalizeComponent (
     //市场监督管理局
     skipExternalCheck: function skipExternalCheck() {
       // registerFlag = 1 登录时标识 -- 显示选择日检、巡检
-      console.log('我到这了哈哈哈');
+      console.log('市场监督管理局--registerFlag');
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?registerFlag=1' });
 
@@ -2041,6 +2041,7 @@ function normalizeComponent (
     //检测中心登录
     skipDailyCheck: function skipDailyCheck() {
       //清空检疫ID
+      console.log('检测中心登录--registerFlag');
       uni.removeStorage({
         key: 'quarantineID',
         success: function success(res) {
@@ -2055,6 +2056,7 @@ function normalizeComponent (
 
     //检疫中心登录
     skipSlaughter: function skipSlaughter() {
+      console.log('检疫中心登录--registerFlag');
       // registerFlag = 1 登录时标识 -- 显示选择日检、巡检
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?registerFlag=3' });
@@ -2063,6 +2065,7 @@ function normalizeComponent (
 
     //批发农贸市场登录
     skipInteriorCheck: function skipInteriorCheck() {
+      console.log('批发农贸市场登录--rid');
       //rid=3 内部自检
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?rid=3'
@@ -2072,6 +2075,7 @@ function normalizeComponent (
 
     //屠宰单位登录
     skipWholesaler: function skipWholesaler() {
+      console.log('屠宰单位登录--slaughteID');
       uni.navigateTo({
         // url: '/pages/global/reg-supplier/reg-supplier?outletsType=3'
         url: '/pages/global/login-tel/login-tel?slaughteID=3' });
@@ -2079,6 +2083,7 @@ function normalizeComponent (
     },
     //种植/养殖源头登录
     skipSkipProduction: function skipSkipProduction() {
+      console.log('种植/养殖源头--outletsType');
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?outletsType=4' });
 
@@ -2086,6 +2091,7 @@ function normalizeComponent (
 
     //批发商登录
     skipSkipMerchant: function skipSkipMerchant() {
+      console.log('批发商登录--outletsType');
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?outletsType=3' });
 
@@ -2093,7 +2099,7 @@ function normalizeComponent (
 
     //网点商家、商家、企业、院校登录
     skipSkipBranch: function skipSkipBranch() {
-      console.log('网点商家');
+      console.log('网点商家登录--outletsType');
       uni.navigateTo({
         url: '/pages/global/login-tel/login-tel?outletsType=1' });
 
@@ -7628,7 +7634,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7649,14 +7655,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7742,7 +7748,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"jxnmsc_uni","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8182,9 +8188,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!******************************************!*\
-  !*** F:/myproject/jxnmsc_uni/pages.json ***!
-  \******************************************/
+/*!****************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/pages.json ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8193,15 +8199,20 @@ module.exports = g;
 /***/ }),
 
 /***/ 40:
-/*!*******************************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/pages/global/login-tel/login-tel.js ***!
-  \*******************************************************************/
+/*!*****************************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/pages/global/login-tel/login-tel.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _validate = __webpack_require__(/*! utils/validate.js */ 41);
-var urlUtils = __webpack_require__(/*! network/url_util.js */ 74);var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+var _validate = __webpack_require__(/*! utils/validate.js */ 41);var urlUtil = __webpack_require__(/*! network/url_util.js */ 42);var globalData = __webpack_require__(/*! config/global_config.js */ 43).globalData;var httpRequest = __webpack_require__(/*! network/httpPromise.js */ 44);var _default =
+
+
 {
   data: function data() {
     return {
@@ -8213,6 +8224,7 @@ var urlUtils = __webpack_require__(/*! network/url_util.js */ 74);var _default =
       time: '立即获取',
       currentTime: 60, //验证时间
       interval: "", //计时器
+      slaughteID: '', //4.屠宰厂小程序登录
       submitData: {
         phoneNum: '', //手机号
         tempVerifyCode: '', //验证码
@@ -8282,37 +8294,353 @@ var urlUtils = __webpack_require__(/*! network/url_util.js */ 74);var _default =
     this.registerFlag = e.registerFlag || '';
     this.Rid = e.rid || '';
     this.submitData.outletsType = e.outletsType || '';
+    this.slaughteID = e.slaughteID || '';
+
   },
   methods: {
     // 登录
-    handleLogin: function handleLogin() {
-      console.log('登录', this.submitData);
+    //《winner 20201208》登录
+    handleLogin: function handleLogin() {var _this = this;
+      //1.外部抽检 2.外部日检 3.批发自检 4.农贸自检 5.网点商家 6.供应商 7.批发商8生产者 9.屠宰场运营人员
+      if (this.Validate(true)) {
+        var url = urlUtil.UserLogin;
+        var operatorID = ''; //把operatorID存到缓存
+        var operatorName = ''; //把operatorName存到缓存
+        var identityType = this.submitData.identityType ? this.submitData.identityType : ''; // 内部自检选择身份 -- 批发市场、农贸市场
+        var tradeInspectionUrl = ''; //跳转内部自检下 -- 批发市场、农贸市场路径
+        var inspectionUrl = ''; //跳转：外部抽检、外部日检、屠宰单位、批发商、生产源头、供货商、网点商家
+        var outletsType = this.submitData.outletsType; //选择身份标识
+        var registerFlag = this.registerFlag;
+        var slaughteID = this.slaughteID;
+        var data = {
+          LoginKey: globalData.loginKey,
+          AppType: globalData.appType,
+          SystemID: globalData.systemID,
+          PhoneNum: this.submitData.phoneNum,
+          TempVerifyCode: this.submitData.tempVerifyCode };
 
-      this.Validate();
-      // this.$refs.popup.open()
+        console.log('outletsType---' + outletsType + 'registerFlag---' + registerFlag + 'slaughteID---' + slaughteID + 'identityType---', identityType);
+        // 登录判断是否选择了身份，只有内部自检选择身份
+        if (identityType) {
+          data.RoleType = identityType; //	1.外部抽检 2.外部日检 3.批发自检 4.农贸自检 5.网点商家 6.供应商 7.批发商 8生产者 9.屠宰场运营人员
+        }
+        if (outletsType) {
+          // 接收的参数outletsType 注册身份标识--商家类别 1.网点商家 2.供货商 3.批发商 4.生产者
+          switch (outletsType) {
+            case '3': //批发商
+              data.RoleType = 7;
+              break;
+            case '4': // 种植/养殖源头
+              data.RoleType = 8;
+              break;
+            case '1': // 网点商家
+              data.RoleType = 5;
+              break;}
+
+        }
+        // 根据选择不同的身份传递不同的登录参数；1.市场监督管理局 2.检测中心登录 3.检疫中心登录 4. 屠宰场小程序登录
+        if (registerFlag) {
+          // console.log('wdebug--inspectionIndexChoujian', typeof this.inspectionIndexChoujian)
+          switch (registerFlag) {
+            case '1':
+              switch (this.inspectionIndexChoujian) {// 选择抽检方式 0.抽检 2.巡检
+                case 0:
+                  data.RoleType = 1;
+                  break;
+                case 1:
+                  data.RoleType = 2;
+                  break;}
+
+              break;
+            case '2':
+              // 选择抽检方式 1.日检 2.巡检
+              switch (this.inspectionIndex) {
+                case 0:
+                  data.RoleType = 10;
+                  break;
+                case 1:
+                  data.RoleType = 11;
+                  break;}
+
+              break;
+            case '3':
+              // 选择抽检方式 1.日检 2.巡检
+              switch (this.inspectionIndex) {
+                case 0:
+                  data.RoleType = 12;
+                  break;
+                case 1:
+                  data.RoleType = 13;
+                  break;}
+
+              break;}
+
+        }
+        if (slaughteID) {
+          data.RoleType = 9;
+        }
+        console.log('提交数据登录信息', data);
+        httpRequest.post(url, data).then(function (res) {
+          console.log('登录成功', res);
+          operatorID = res.data.Data.OperatorID;
+          operatorName = res.data.Data.OperatorName;
+          try {
+            uni.setStorageSync('operatorID', operatorID);
+            uni.setStorageSync('operatorName', operatorName);
+
+          } catch (e) {
+            console.log('login-tel-登录成功保存本地失败', e);
+          }
+          // 内部自检登录判断
+          if (identityType) {
+            switch (identityType) {
+              case 3: //批发自检
+                console.log('wdebug 2021-02-23-12:51', identityType);
+                // tradeInspectionUrl = '/pages/wholesale-inspection/tabbar/tabbar'
+                tradeInspectionUrl = '/pages/wholesale-inspection/pages/index/index';
+                break;
+              case 4: //农贸自检
+                // tradeInspectionUrl = '/pages/trade-inspection/tabbar/tabbar'
+                tradeInspectionUrl = '/pages/trade-inspection/pages/index/index';
+                break;}
+
+            uni.reLaunch({
+              url: tradeInspectionUrl });
+
+          }
+          // 批发商、生产源头、供货商、网点商家登录判断
+          if (outletsType) {
+            console.log('选择身份', outletsType);
+            switch (outletsType) {
+              case '4': // 种/养殖小程序
+                // inspectionUrl = '/pages/plant-breed/tabbar/tabbar'
+                inspectionUrl = '/pages/plant-breed/pages/index/index?plantID=' + _this.plantIndex;
+                break;
+              case '3': //批发商小程序
+                // inspectionUrl = '/pages/wholesaler/tabbar/tabbar'
+                inspectionUrl = '/pages/wholesaler/pages/index/index';
+                break;
+              case '1': // 网点商家
+                // inspectionUrl = '/pages/merchant/tabbar/tabbar'
+                inspectionUrl = '/pages/merchant/pages/index/index';
+                break;}
+
+            uni.reLaunch({
+              url: inspectionUrl });
+
+          }
+          // 市场监督管理局、检测中心、检疫中心判断登录
+          if (registerFlag) {
+            console.log('0000000000', typeof registerFlag, '----', _this.inspectionIndexChoujian);
+            switch (registerFlag) {
+              case '1':
+                switch (_this.inspectionIndexChoujian) {// 选择抽检方式 0.日检 2.巡检
+                  case 0:
+                    // inspectionUrl = '/pages/bazaar-rijian/tabbar/tabbar'
+                    inspectionUrl = '/pages/bazaar-rijian/pages/index/index';
+                    break;
+                  case 1:
+                    inspectionUrl = '/pages/bazaar-xunjian/pages/index/index';
+                    break;}
+
+                break;
+              case '2':
+                switch (_this.inspectionIndex) {
+                  case 0:
+                    console.log('wdebug 2021-02-23', _this.inspectionIndex);
+                    // inspectionUrl = '/pages/daily-detection-unit/tabbar/tabbar'
+                    inspectionUrl = '/pages/daily-detection-unit/pages/index/index';
+                    break;
+                  case 1:
+                    inspectionUrl = '/pages/daily-detection-unit-xunjian/pages/index/index';
+                    break;}
+
+                break;
+              case '3':
+                switch (_this.inspectionIndex) {
+                  case 0:
+                    // inspectionUrl = '/pages/quarantine-unit/tabbar/tabbar'
+                    inspectionUrl = '/pages/quarantine-unit/pages/index/index';
+                    break;
+                  case 1:
+                    // inspectionUrl = '/pages/detection-unit/tabbar/tabbar'
+                    inspectionUrl = '/pages/detection-unit/pages/index/index';
+                    break;}
+
+                break;}
+
+            uni.reLaunch({
+              url: inspectionUrl });
+
+          }
+          if (slaughteID) {
+            // inspectionUrl = '/pages/slaughter/tabbar/tabbar'
+            inspectionUrl = '/pages/slaughter/pages/index/index';
+            uni.reLaunch({
+              url: inspectionUrl });
+
+          }
+        }).catch(function (error) {
+          console.log('登录失败', error);
+          if ((identityType || registerFlag || outletsType == 3) && error.data.Result == 'false') {
+            // getmessage.getErrorAlert('暂无权限，联系管理员！')
+            uni.showToast({
+              title: '暂无权限，联系管理员！',
+              icon: 'none',
+              time: 1000 });
+
+          } else {
+            if (error.data.Result == 'false' && error.data.Notice == "该手机号还没注册！") {
+              var skipUrl = '/pages/global/reg-supplier/reg-supplier?outletsType=' + outletsType;
+              // getmessage.getErrorMsgs('您输入的手机号未注册', '', skipUrl, 1, '' , true, '去注册')
+            } else {
+                // getmessage.getErrorAlert('账号或者验证码错误');
+
+              }
+          }
+        });
+      }
     },
     /**
        * 获取验证码<winner443@163.com>
-       * 
-       * @param {Object} e 
+       *
+       * @param {Object} e
        */
-    _getMsg: function _getMsg(e) {
-      var url = urlUtil.getUserSMSVerifyCode;
-      var identityType = _this.data.submitData.identityType; //内部自检选择身份
-      var outletsType = _this.data.submitData.outletsType; //选择身份标识
-      var registerFlag = _this.data.registerFlag;
-      var slaughteID = _this.data.slaughteID;
-      var data = {
-        LoginKey: app.globalData.loginKey,
-        AppType: app.globalData.appType,
-        SystemID: app.globalData.systemID,
-        PhoneNum: _this.data.submitData.phoneNum,
-        LogType: 1 //	1.登陆获取验证码 2.注册获取验证码
-      };
+    _getMsg: function _getMsg(e) {var _this2 = this;
+      console.log(globalData.loginKey);
+      if (this.Validate(false)) {
+        var url = urlUtil.getUserSMSVerifyCode;
+        var identityType = this.submitData.identityType; //内部自检选择身份
+        var outletsType = this.submitData.outletsType; //选择身份标识
+        var registerFlag = this.registerFlag;
+        var slaughteID = this.slaughteID;
+        var data = {
+          LoginKey: globalData.loginKey,
+          AppType: globalData.appType,
+          SystemID: globalData.systemID,
+          PhoneNum: this.submitData.phoneNum,
+          LogType: 1 //	1.登陆获取验证码 2.注册获取验证码
+        };
+        //获取验证码判断是否选择了身份，只有内部自检选择身份
+        if (identityType) {
+          data.RoleType = identityType; //		1.监督抽检 2.监督巡检 3.批发自检 4.农贸自检 5.网点商家 6.供应商 7.批发商8生产者 9.屠宰场运营人员 10.检测日检 11.检测巡检 12.检疫日检 13.检疫巡检
+        }
+        if (outletsType) {
+          // 接收的参数outletsType 注册身份标识--商家类别 1.网点商家 2.供货商 3.批发商 4.生产者
+          switch (outletsType) {
+            case '3': //批发商
+              data.RoleType = 7;
+              break;
+            case '4': // 种植/养殖源头
+              data.RoleType = 8;
+              break;
+            case '1': // 网点商家
+              data.RoleType = 5;
+              break;}
+
+        }
+        // 根据选择不同的身份传递不同的登录参数；1.市场监督管理局 2.检测中心登录 3.检疫中心登录 4.屠宰厂小程序登录
+        if (registerFlag) {
+          console.log('wdebug---1839', typeof registerFlag);
+          switch (registerFlag) {
+            case '1':
+              switch (this.inspectionIndexChoujian) {// 选择抽检方式 0.日检 2.巡检
+                case 0:
+                  data.RoleType = 1;
+                  break;
+                case 1:
+                  data.RoleType = 2;
+                  break;}
+
+              break;
+            case '2':
+              // 选择抽检方式 1.日检 2.巡检
+              switch (this.inspectionIndex) {
+                case 0:
+                  // this.$set(data, 'RoleType', 10)
+                  data.RoleType = 10;
+                  break;
+                case 1:
+                  data.RoleType = 11;
+                  break;}
+
+              break;
+            case '3':
+              // 选择抽检方式 1.日检 2.巡检
+              switch (this.inspectionIndex) {
+                case 0:
+                  data.RoleType = 12;
+                  break;
+                case 1:
+                  data.RoleType = 13;
+                  break;}
+
+              break;}
+
+        }
+        // 屠宰场登录
+        if (slaughteID) {
+          data.RoleType = 9;
+        }
+        console.log('wdebug验证码手机号', this.submitData.phoneNum);
+        this.disabled = true,
+        this.currentTime = 60;
+        //请求发送短信接口
+        httpRequest.post(url, data).then(function (res) {
+          console.log('获取验证码成功', res);
+        }).catch(function (error) {
+          console.log('获取验证码失败', error);
+          // 手机号未注册
+          // if((identityType || registerFlag || outletsType==3) && error.data.Result == 'false') {
+          if ((identityType || registerFlag) && error.data.Result == 'false') {
+            uni.showToast({
+              title: '暂无权限，联系管理员！',
+              icon: 'none',
+              time: 1000 });
+
+            _this2.getMsgTimer();
+            clearInterval(_this2.interval);
+          } else {
+            if (error.data.Result == 'false' && error.data.Notice == "该手机号还没注册！") {
+              var skipUrl = '/pages/global/reg-supplier/reg-supplier?outletsType=' + _this2.submitData.outletsType;
+              _this2.getMsgTimer();
+              clearInterval(_this2.interval);
+              // 提示用户，该手机号未注册引导用户去注册
+              // getmessage.getErrorMsgs('您输入的手机号尚未注册', '', skipUrl, 1, '' , true, '去注册')
+              uni.showToast({
+                title: '您输入的手机号尚未注册',
+                icon: 'none',
+                time: 1000 });
+
+              return false;
+            }
+          }
+        });
+        // 调用计时器方法
+        this.last();
+      }
+    },
+    getMsgTimer: function getMsgTimer() {
+      this.disabled = false,
+      this.currentTime = 0,
+      this.time = '立即获取';
     },
     radioChange: function radioChange(e) {
-      console.log('wdebug 2021-3-9', e);
+      console.log('wdebug 2021-3-11', e);
+      var flag = parseInt(e.detail.value - 1);
       console.log(this.registerFlag);
+      if (this.registerFlag) {
+        this.inspectionIndex = flag;
+        this.inspectionIndexChoujian = flag;
+      }
+      if (this.Rid) {
+        this.inspectionIndex = flag;
+        this.submitData.identityType = this.identityList[flag].identityType;
+      }
+      // 种养殖选择角色
+      if (this.outletsType == '4') {
+        this.plantIndex = flag;
+      }
     },
     // 关闭uni-popup
     close: function close(done) {
@@ -8373,17 +8701,18 @@ var urlUtils = __webpack_require__(/*! network/url_util.js */ 74);var _default =
       }
     },
     //计时器
-    last: function last() {
+    last: function last() {var _this3 = this;
       var currentTime = this.currentTime;
       this.time = currentTime + '秒';
       this.interval = setInterval(function () {
-        this.time = currentTime - 1 + '秒';
+        _this3.time = currentTime - 1 + '秒';
         currentTime--;
+        // console.log('我进来了没', currentTime)
         if (currentTime <= 0) {
-          clearInterval(this.interval);
-          this.time = '重新获取';
-          this.currentTime = 60;
-          this.disabled = false;
+          clearInterval(_this3.interval);
+          _this3.time = '重新获取';
+          _this3.currentTime = 60;
+          _this3.disabled = false;
           return 0;
         }
       }, 1000);
@@ -8393,9 +8722,9 @@ var urlUtils = __webpack_require__(/*! network/url_util.js */ 74);var _default =
 /***/ }),
 
 /***/ 41:
-/*!*************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/utils/validate.js ***!
-  \*************************************************/
+/*!***********************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/utils/validate.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8414,15 +8743,924 @@ module.exports = {
 
 /***/ }),
 
-/***/ 49:
+/***/ 42:
 /*!*************************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/components/uni-popup/popup.js ***!
+  !*** F:/Workspace/myproject/jxnmsc_uni/network/url_util.js ***!
   \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var server = __webpack_require__(/*! config/global_config */ 43).apiUrl;
+
+//抽查 巡查
+var parkPatrolCheck = server + "pi.Manager.parkPatrolCheck.hf";
+
+//录入外部检查记录
+var setExternalCheckInspect = server + "pi.User.setExternalCheckInspect.hf";
+
+//注册
+var UserLogon = server + "pi.User.UserLogon.hf";
+
+// 上传文件
+var uploadSignContent = server + "pi.Manager.uploadSignContent.hf";
+
+//获取验证码
+var getUserSMSVerifyCode = server + "pi.User.getUserSMSVerifyCode.hf";
+
+//获取批发市场
+var getFactoryList = server + "pi.User.getFactoryList.hf";
+
+//获取市场商家
+var getOutletsListByFactoryID = server + "pi.User.getOutletsListByFactoryID.hf";
+
+//获取外部内部检查记录（批发市场）
+var getCheckInspectLogis = server + "pi.User.getCheckInspectLogis.hf";
+
+//获取农贸市场外部内部记录
+var getCheckInspectFactory = server + "pi.User.getCheckInspectFactory.hf";
+
+//登录
+var UserLogin = server + "pi.User.UserLogin.hf";
+
+// 根据登陆角色查看检疫记录 -- 获取检疫记录
+var findCheckQuarantinereport = server + "pi.User.findCheckQuarantinereport.hf";
+
+//获取抽检/日检
+var findCount = server + "pi.User.findCount.hf";
+
+//获取日检检疫记录
+var findCheckCount = server + "pi.User.findCheckCount.hf";
+
+//查看验收记录列表
+var getQuarantinereportList = server + "pi.User.getQuarantinereportList.hf";
+
+//监督单位-检疫录入
+var setQuarantinereport = server + "pi.User.setQuarantinereport.hf";
+
+//获取登陆检查角色信息
+var getOperatorRoleInfo = server + "pi.User.getOperatorRoleInfo.hf";
+
+// 录入内部自检记录
+var setInsideCheckInspect = server + "pi.User.setInsideCheckInspect.hf";
+
+//获取自己发布入场申报注册记录
+var getAdmissionapList = server + "pi.User.getAdmissionapList.hf";
+
+//查看接收到的入场申报注册记录列表 -- 批发商自检入场审核
+var getAdmissionapListByLogisticianID = server + "pi.User.getAdmissionapListByLogisticianID.hf";
+
+// 根据登陆ID获取销售订单 -- 批发商
+var getOrderListByID = server + "pi.User.getOrderListByID.hf";
+
+//获取所有批发商农贸市场
+var findFactoryList = server + "pi.User.findFactoryList.hf";
+
+//根据登陆ID获取采购订单 批发商 -- 采购订单
+var getPurchaseOrderListByID = server + "pi.User.getPurchaseOrderListByID.hf";
+
+// 根据商家类别获取供货商列表 批发商 -- 选择生产源
+var getOutletsListByOutletsType = server + "pi.User.getOutletsListByOutletsType.hf";
+
+//公用发布预购接口
+var setPreOrder = server + "pi.User.setPreOrder.hf";
+
+// 获取自己发布的预购信息
+var getReleasePreOrder = server + "pi.User.getReleasePreOrder.hf";
+
+// 检测中心 - 日检 - 待检测记录
+var findAdmissionaptList = server + "pi.User.findAdmissionaptList.hf";
+
+// 检测中心 - 日检 - 录入
+var insertAdmissionapt = server + "pi.User.insertAdmissionapt.hf";
+
+// 检测中心 - 日检 - 获取待检测记录
+var getCheckAdmissionaptList = server + "pi.User.getCheckAdmissionaptList.hf";
+
+// 监督单位 - 日检 - 获取ID
+var getFactorysByProductID = server + "pi.User.getFactorysByProductID.hf";
+
+// 批发商 - 入场申报 - 新增
+var InsertAdmissionap = server + "pi.User.InsertAdmissionap.hf";
+
+// 批发商 - 屠宰申报 - 新增
+var InsertPrediction = server + "pi.User.InsertPrediction.hf";
+
+// 批发商 - 屠宰记录
+var getPredictionList = server + "pi.User.getPredictionList.hf";
+
+// 批发商 - 有货接单、无货取消
+var updateAcceptPreOrderStatus = server + "pi.User.updateAcceptPreOrderStatus.hf";
+
+// 获取接收的预购订单
+var getAcceptPreOrder = server + "pi.User.getAcceptPreOrder.hf";
+
+// 获取接收到的屠宰申报
+var getPredictionListByLogisticianID = server + "pi.User.getPredictionListByLogisticianID.hf";
+
+// 屠宰厂 - 验收录入
+var inserTquarantinereport = server + "pi.User.inserTquarantinereport.hf";
+
+// 屠宰场小程序- 检疫详情
+var getQuarantByProductsID = server + "pi.User.getQuarantByProductsID.hf";
+
+// 批发自检小程序 - 入场注册验收
+var insertAdmissionap = server + "pi.User.insertAdmissionap.hf";
+
+// 商家小程序 查看验收详情
+var getQuarantinereByOrderID = server + "pi.User.getQuarantinereByOrderID.hf";
+
+// 商家小程序 检疫详情
+var getQuarantByOrderID = server + "pi.User.getQuarantByOrderID.hf";
+
+// 屠宰申报 商品列表
+var getChargeGoods = server + "pi.User.getChargeGoods.hf";
+
+module.exports = {
+  parkPatrolCheck: parkPatrolCheck,
+  setExternalCheckInspect: setExternalCheckInspect,
+  UserLogon: UserLogon,
+  uploadSignContent: uploadSignContent,
+  getUserSMSVerifyCode: getUserSMSVerifyCode,
+  getFactoryList: getFactoryList,
+  getOutletsListByFactoryID: getOutletsListByFactoryID,
+  getCheckInspectLogis: getCheckInspectLogis,
+  getCheckInspectFactory: getCheckInspectFactory,
+  UserLogin: UserLogin,
+  findCheckQuarantinereport: findCheckQuarantinereport,
+  findCount: findCount,
+  findCheckCount: findCheckCount,
+  getQuarantinereportList: getQuarantinereportList,
+  setQuarantinereport: setQuarantinereport,
+  getOperatorRoleInfo: getOperatorRoleInfo,
+  setInsideCheckInspect: setInsideCheckInspect,
+  getAdmissionapList: getAdmissionapList,
+  getAdmissionapListByLogisticianID: getAdmissionapListByLogisticianID,
+  findFactoryList: findFactoryList,
+  getOrderListByID: getOrderListByID,
+  getPurchaseOrderListByID: getPurchaseOrderListByID,
+  getOutletsListByOutletsType: getOutletsListByOutletsType,
+  setPreOrder: setPreOrder,
+  getReleasePreOrder: getReleasePreOrder,
+  findAdmissionaptList: findAdmissionaptList,
+  insertAdmissionapt: insertAdmissionapt,
+  getCheckAdmissionaptList: getCheckAdmissionaptList,
+  getFactorysByProductID: getFactorysByProductID,
+  InsertAdmissionap: InsertAdmissionap,
+  InsertPrediction: InsertPrediction,
+  getPredictionList: getPredictionList,
+  updateAcceptPreOrderStatus: updateAcceptPreOrderStatus,
+  getAcceptPreOrder: getAcceptPreOrder,
+  getPredictionListByLogisticianID: getPredictionListByLogisticianID,
+  inserTquarantinereport: inserTquarantinereport,
+  getQuarantByProductsID: getQuarantByProductsID,
+  insertAdmissionap: insertAdmissionap,
+  getQuarantinereByOrderID: getQuarantinereByOrderID,
+  getQuarantByOrderID: getQuarantByOrderID,
+  getChargeGoods: getChargeGoods };
+
+/***/ }),
+
+/***/ 43:
+/*!*****************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/config/global_config.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// 腾讯地图subKey
+//const subKey = "HCNBZ-VTQKW-2LGRP-ODP6G-4YPGV-HEFTJ"
+// 服务器资源信息
+//const imgURL ="https://sdyzs.shidongvr.com/sdyzsdistfile/"
+// 服务器域名
+var apiUrl = "https://www.shiyoutong.cn/sznmpi/";
+// 地图默认信息
+// 纬度
+var latitude = 39.928818;
+// 经度
+var longitude = 116.184142;
+// 该经纬度对应默认位置
+var markerName = '通景大厦';
+
+//图片地址路径
+var imageUrl = 'https://www.shiyoutong.cn/sznmdistfile/';
+
+// 公共参数
+var globalData = {
+  userInfo: null,
+  reportPatch: '', //图片路径
+  //调用接口公共参数
+  loginKey: 1,
+  appType: '2',
+  systemID: 2 };
+
+
+module.exports = {
+  //subKey: subKey,
+  apiUrl: apiUrl,
+  //imgURL: imgURL,
+  latitude: latitude,
+  longitude: longitude,
+  markerName: markerName,
+  imageUrl: imageUrl,
+  globalData: globalData };
+
+/***/ }),
+
+/***/ 44:
+/*!****************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/network/httpPromise.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {var httpPromiseRequest = function httpPromiseRequest(url, options) {var headers = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "application/json;";
+  return new Promise(function (resolve, reject) {
+    uni.showLoading({
+      title: '数据加载中',
+      icon: 'loading' });
+
+    uni.request({
+      url: url,
+      method: options.method,
+      data: options.data,
+      header: {
+        'Content-Type': headers },
+
+      success: function success(result) {
+        console.log(result);
+        if (result.data.Result == "true") {
+          //请求成功
+          resolve(result);
+        } else {
+          //请求失败
+          reject(result);
+        }
+        uni.hideLoading(); //关闭loading
+      },
+      fail: function fail(error) {
+        reject(error);
+        uni.hideLoading(); //关闭loading
+      } });
+
+  });
+};
+//get请求
+var getPromise = function getPromise(url) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return httpPromiseRequest(url, { method: 'GET', data: options });
+};
+//post请求
+var post = function post(url) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var headers = arguments.length > 2 ? arguments[2] : undefined;
+  return httpPromiseRequest(url, { method: 'POST', data: options }, headers);
+};
+module.exports = {
+  post: post };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 53:
+/*!**********************************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/pages/bazaar-rijian/pages/index/index.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 50));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _Clogout = _interopRequireDefault(__webpack_require__(/*! contentComps/Clogout/Clogout.vue */ 54));
+var _textc = _interopRequireDefault(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '/components/textc/textc.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var util = __webpack_require__(/*! utils/util.js */ 59);var _default =
+{
+  data: function data() {
+    return {
+      roleList: [
+      {
+        rid: 1,
+        rname: "开始抽检",
+        bindTap: "skipInspect",
+        imageSrc: '/static/images/login-img/1.png' },
+
+      {
+        rid: 2,
+        rname: "今日抽检",
+        bindTap: "skipTodayInspect",
+        imageSrc: '/static/images/login-img/3.png' },
+
+      {
+        rid: 3,
+        rname: "累计抽检",
+        bindTap: "skipCountInspect",
+        imageSrc: '/static/images/login-img/3.png' }],
+
+
+      loginTime: '',
+      loginName: '' };
+
+  },
+  /**
+      * 生命周期函数--监听页面加载
+      */
+  onLoad: function onLoad(options) {
+    console.log(util.formatTime(new Date()));
+    this.loginTime = util.formatTime(new Date()),
+    this.loginName = uni.getStorageSync('operatorName');
+  },
+  components: {
+    Clogout: _Clogout.default,
+    textc: _textc.default },
+
+  methods: {
+    Fn: function Fn(method) {
+      this[method]();
+    },
+    // 开始抽检
+    skipInspect: function skipInspect() {
+      console.log('进入开始抽检');
+      uni.navigateTo({
+        url: "/pages/bazaar-rijian/pages/inspect/inspect" });
+
+    },
+    // 今日抽检
+    skipTodayInspect: function skipTodayInspect() {
+      console.log('进入今日抽检');
+      uni.navigateTo({
+        url: "/pages/bazaar-rijian/pages/record/record?toTime=1" });
+
+    },
+    // 累计抽检
+    skipCountInspect: function skipCountInspect() {
+      console.log('进入累计抽检');
+      uni.navigateTo({
+        url: "/pages/bazaar-rijian/pages/record/record?toTime=2" });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 59:
+/*!*******************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/utils/util.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var formatTime = function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+};
+
+var formatNumber = function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+};
+
+/**
+    * 将小程序的API封装成支持Promise的API
+    * @params fn {Function} 小程序原始API，如wx.login
+    */
+var wxPromisify = function wxPromisify(fn) {
+  return function () {var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    return new Promise(function (resolve, reject) {
+      obj.success = function (res) {
+        resolve(res);
+      };
+      obj.fail = function (res) {
+        reject(res);
+      };
+      fn(obj);
+    });
+  };
+};
+module.exports = {
+  formatTime: formatTime,
+  wxPromisify: wxPromisify };
+
+/***/ }),
+
+/***/ 68:
+/*!**************************************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/pages/bazaar-rijian/pages/inspect/inspect.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+var _Cinspect = _interopRequireDefault(__webpack_require__(/*! ../../../../content-comps/Cinspect/Cinspect.vue */ 69));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // pages/operate/inspect/inspect.js
+var urlUtil = __webpack_require__(/*! network/url_util.js */ 42);var httpRequest = __webpack_require__(/*! network/httpPromise.js */ 44);var dateTime = __webpack_require__(/*! utils/util.js */ 59);var uploadFile = __webpack_require__(/*! utils/upload-file.js */ 77);var globalData = __webpack_require__(/*! config/global_config.js */ 43).globalData;var _default = {
+  name: 'inspect',
+  data: function data() {
+    return {
+      bazaarList: [], //农贸市场列表
+      merchantList: [], //市场商家列表
+      bazaarIndex: 0,
+      reportImg: '', //图片本地路径
+      currentTime: '', //当前时间
+      logisticianID: '', // 批发市场ID
+      factoryID: '', //农场ID
+      selectOneseif: 1 // 1.批发市场 2.农贸市场
+    };
+  },
+  components: {
+    Cinspect: _Cinspect.default },
+
+  /**
+                                    * 生命周期函数--监听页面加载
+                                    */
+  onLoad: function onLoad(options) {
+    console.log('page1 show');
+    console.log('当前时间', dateTime.formatTime(new Date(), ':'));
+    this.currentTime = dateTime.formatTime(new Date(), ':');
+    this.readSuperviseID(); //获取监督单位ID && 农场ID
+  },
+  methods: {
+    // picker选择器
+    bindPickerChange: function bindPickerChange() {
+      console.log('选择抽检市场', e.detail.value);
+      this.bazaarIndex = e.detail.value;
+    },
+    /**
+        * 获取抽检巡检人员可检查的市场的ID
+        */
+    readSuperviseID: function readSuperviseID() {var _this = this;
+      var url = urlUtil.getFactorysByProductID;
+      var data = {
+        LoginKey: globalData.loginKey,
+        AppType: globalData.appType,
+        SystemID: globalData.systemID,
+        OperatorID: uni.getStorageSync('operatorID') };
+
+      httpRequest.post(url, data).then(function (res) {
+        console.log('监督单位 - 自检 - 获取登陆检查角色成功', res);
+        _this.logisticianID = res.data.Data.Product.LogisticianIDs,
+        _this.factoryID = res.data.Data.Product.FactoryIDs;
+        //获取市场下的商家信息
+        _this.readBazaarList();
+      }).catch(function (err) {
+        console.log('内部自检 -- 获取登陆检查角色失败', err);
+      });
+    },
+    /**
+        * 获取抽检市场
+        *
+        */
+    readBazaarList: function readBazaarList() {var _this2 = this;
+      var url = urlUtil.getFactoryList;
+      var data = {
+        LoginKey: globalData.loginKey,
+        AppType: globalData.appType,
+        SystemID: globalData.systemID };
+
+      console.log('wdebug1442', this.selectOneseif);
+      // 判断是选择的批发市场还是农贸市场
+      switch (this.selectOneseif) {
+        case 1: // 批发市场
+          data.XXIDS = this.logisticianID,
+          data.Type = 1;
+          break;
+        case 2: // 农贸市场
+          data.XXIDS = this.factoryID,
+          data.Type = 2;
+          break;}
+
+      httpRequest.post(url, data).then(function (res) {
+        // console.log('农贸市场参数', JSON.stringify(data))
+        console.log('获取监督单位 - 日检 - 抽检市场', res);
+        _this2.bazaarList = res.data.FactoryList;
+        console.log('wdebug农场市场列表', _this2.bazaarList);
+      }).catch(function (err) {
+        console.log('获取农场失败', err);
+      });
+    },
+    /**
+       * 获取市场商家
+       *
+       */
+    readBazaarMerchantList: function readBazaarMerchantList(factoryID) {var _this3 = this;
+      var url = urlUtil.getOutletsListByFactoryID;
+      var data = {
+        LoginKey: globalData.loginKey,
+        AppType: globalData.appType,
+        SystemID: globalData.systemID,
+        FactoryID: factoryID };
+
+      // 判断是选择的批发市场还是农贸市场
+      switch (this.selectOneseif) {
+        case 1: // 批发市场
+          data.Type = 1;
+          break;
+        case 2: // 农贸市场
+          data.Type = 2;
+          break;}
+
+      httpRequest.post(url, data).then(function (res) {
+        // console.log('获取市场商家', JSON.stringify(data))
+        console.log('获取监督单位 - 日检 - 市场商家', res);
+        _this3.merchantList = res.data.outletsList;
+        console.log('wdebug市场商家列表', _this3.merchantList);
+      }).catch(function (err) {
+        console.log('获取场商家列表', err);
+      });
+    },
+    /**
+        * 获取市场类型
+        */
+    radioChange: function radioChange(e) {
+      console.log('获取监督单位 - 日检 - 市场类型', e);
+      var selectOneseif = e.detail.selectOneseif;
+      this.selectOneseif = selectOneseif;
+      this.readBazaarList(); //选择市场类型，根据市场类型获取不同的市场。
+    },
+    /**
+        * 获取市场商家 <winner 2020-12-21>
+        */
+    selectBazaar: function selectBazaar(e) {
+      console.log('监督单位 - 日检 - 选择抽检市场', e);
+      this.readBazaarMerchantList(e.detail.factoryID);
+    },
+    /**
+        * 保存抽检信息
+        */
+    sumitSave: function sumitSave(event) {var _this4 = this;
+      console.log('winner保存抽检', event);
+      var url = urlUtil.setExternalCheckInspect;
+      var data = event.detail;
+      data.Type = 2,
+      data.FactoryType = this.selectOneseif; //检查的市场类型 1.批发市场 2农贸市场
+      data.OperatorID = uni.getStorageSync('operatorID');
+      data.ProductID = 2;
+      httpRequest.post(url, data).then(function (res) {
+        console.log('添加成功', res);
+        //上传图片到服务器
+        if (_this4.reportImg) {
+          var BigProductsID = res.data.Data.BigProductsID;
+          uploadFile.uploadFileServer(urlUtil.uploadSignContent, _this4.reportImg[0], _this4.reportImg[0] + BigProductsID, BigProductsID, 1);
+        }
+        // uni.redirectTo({
+        //   url: '/pages/bazaar-rijian/pages/index/index'
+        // })
+        uni.navigateBack({
+          detail: 1 });
+
+      }).catch(function (error) {
+        console.log('外部抽检失败', error);
+      });
+    },
+    /**
+        * 上传文件<winner443@163.com>
+        */
+    uploadFileImg: function uploadFileImg(e) {
+      console.log('上传文件', e);
+      uni.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function success(res) {
+          // tempFilePath可以作为img标签的src属性显示图片
+          console.log('选中了', res, '====', res.tempFilePaths);
+          //取出路径
+          var path = res.tempFilePaths;
+          var tempFilePaths = [];
+          for (var i = 0; i < path.length; i++) {
+            console.log('我是i', path[i]);
+            tempFilePaths.push(path[i]);
+          };
+          this.reportImg = tempFilePaths;
+        } });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 74:
+/*!****************************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/content-comps/Cinspect/Cinspect.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  name: 'Cinspect',
+  data: function data() {
+    return {
+      // 市场商家类型
+      radioList: [
+      {
+        name: 'unit',
+        value: '批发市场',
+        checked: 'true' },
+
+      {
+        name: 'oneseif',
+        value: '农贸市场' }],
+
+
+      insTodayArray: {}, // 抽检市场列表
+      insTodayIndex: 0, // 抽检市场
+      insTodayDefault: '--请选择--', // 抽检市场默认值
+      insResultArray: ['合格', '不合格'],
+      insResultIndex: 0,
+      insResultObject: [
+      {
+        id: 1,
+        name: '合格' },
+
+      {
+        id: 2,
+        name: '不合格' }],
+
+
+      insMerchantIndex: 0, // 市场商家
+      insMerchantDefault: '请选择', // 市场商家默认值
+      insCheckClassArray: [
+      {
+        id: 1,
+        name: '农药残留' },
+
+      {
+        id: 2,
+        name: '兽药残留' },
+
+      {
+        id: 3,
+        name: '瘦肉精' },
+
+      {
+        id: 4,
+        name: '亚硝酸盐' }],
+
+
+      insCheckClassIndex: 0,
+      inputUnitName: '', //单位名称
+      inputGoods: '', // 商品类型
+      factoryID: '', // 市场商家ID
+      selectOneseif: '0' // 1.批发市场 2.农贸市场
+    };
+  },
+  props: {
+    insUnitName: {
+      type: String,
+      value: '默认' },
+
+    insTodayName: {
+      type: String,
+      value: '默认' },
+
+    bazaarClass: {
+      type: String,
+      value: '' },
+
+    insMerchant: {
+      type: String,
+      value: '默认' },
+
+    insGoods: {
+      type: String,
+      value: '默认' },
+
+    insResult: {
+      type: String,
+      value: '默认' },
+
+    insCheckName: {
+      type: String,
+      value: '检测员' },
+
+    insCheckNamePlc: {
+      type: String,
+      value: '默认' },
+
+    insCheckClass: {
+      type: String,
+      value: '检测项' },
+
+    insGoodsPlaceholder: {
+      type: String,
+      value: "商品类型" },
+
+    reportImg: {
+      type: String },
+
+    currentTime: {
+      type: String },
+
+    //抽检市场list
+    insTodayArray: {
+      type: Object,
+      observer: function observer(newVal, oldVal) {
+        console.log('我是新传入的', newVal);
+        console.log('我是旧的传入的', oldVal);
+      } },
+
+    //市场商家
+    insMerchantArray: {
+      type: Object } },
+
+
+  methods: {
+    // 日检市场
+    insTodayChange: function insTodayChange(e) {
+      console.log('选择抽检市场', e.detail.value);
+      console.log(this.insTodayArray);
+      this.insTodayIndex = e.detail.value,
+      this.factoryID = this.insTodayArray[e.detail.value].FactoryID,
+      this.insTodayDefault = this.insTodayArray[e.detail.value].FactoryName;
+      var data = {
+        factoryID: this.data.factoryID };
+
+      this.$emit('selectBazaar', data, {});
+    },
+    //市场商家
+    insMerchantChange: function insMerchantChange(e) {
+      console.log('监督单位 - 日检 - 市场商家', e.detail.value);
+      this.insMerchantIndex = e.detail.value;
+    },
+    //检测项
+    insCheckClassChange: function insCheckClassChange(e) {
+      console.log('picker发送选择改变，携带值为', e.detail.value);
+      this.insCheckClassIndex = e.detail.value;
+    },
+    //检测结果
+    insResultChange: function insResultChange(e) {
+      console.log('picker发送选择改变，携带值为', e.detail.value);
+      this.insResultIndex = e.detail.value;
+    },
+    //获取单位名称
+    inputUnitName: function inputUnitName(e) {
+      this.inputUnitName = e.detail.value;
+    },
+    //获取商品名称
+    inputGoods: function inputGoods(e) {
+      this.inputGoods = e.detail.value;
+    },
+    //《winner 20201117》 选择认证类型
+    radioChange: function radioChange(e) {
+      console.log('radio发生change事件，携带value值为：', e.detail.value);
+      var selectOneseif = 1;
+      switch (e.detail.value) {
+        case "unit":
+          selectOneseif = 1;
+          break;
+        case "oneseif":
+          selectOneseif = 2;
+          break;}
+
+      this.selectOneseif = selectOneseif;
+      var data = {
+        selectOneseif: selectOneseif };
+
+      this.$emit('radioChange', data, {});
+    },
+    //发出上传事件函数
+    uploadFile: function uploadFile() {
+      var data = {};
+      this.$emit('uploadFile', data, {});
+    },
+    //保存
+    sumitSave: function sumitSave() {
+      var insTodayIndex = this.insTodayIndex;
+      var insCheckClassIndex = this.insCheckClassIndex;
+      var insResultIndex = this.insResultIndex;
+      var insMerchantIndex = this.insMerchantIndex;
+      console.log('选择市场ID', this.insTodayArray[insTodayIndex].FactoryID);
+      var data = {
+        LoginKey: globalData.loginKey,
+        AppType: globalData.appType,
+        SystemID: globalData.systemID,
+        GoodsName: this.inputGoods,
+        OutletsID: this.insMerchantArray[insMerchantIndex].OutletsID,
+        FactoryID: this.insTodayArray[insTodayIndex].FactoryID,
+        TestItems: this.insCheckClassArray[insCheckClassIndex].id,
+        Fruit: this.insResultObject[insResultIndex].id,
+        FactoryType: this.selectOneseif || 1 };
+
+      this.$emit('sumitSave', data, {});
+    } } };
+
+
+/**
+            * 组件的属性列表
+            */
+
+// options: {
+//   addGlobalClass: true,
+//   multipleSlots: true,
+//   stylelsolation: "isolated"
+// },
+exports.default = _default;
+
+/***/ }),
+
+/***/ 77:
+/*!**************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/utils/upload-file.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var app = getApp();
+/**
+                     * 上传文件到服务器 <winner443@163.com>
+                     * 
+                     * @param {String} url //上传接口
+                     * @param {String} filePath //上传路径
+                     * @param {String} name //文件名称
+                     * @param {Int} uploadID //文件ID
+                     * @param {Int} uploadtype //1. 外部检查 2.内部自检 3.商家注册 身份证正面 4.商家注册 身份证反面 5.商家注册 营业执照 6.监督单位 检疫附件文件 7.屠宰申报 票据图片 8.检测中心-日检 检测录入 自检报告
+                     */
+function uploadFileServer(url, filePath, name, uploadID, uploadtype) {
+  var formData = {};
+  switch (uploadtype) {
+    case 1:
+      formData = {
+        BigProductsID: uploadID };
+
+      break;
+    case 2:
+      formData = {
+        ProductsID: uploadID };
+
+      break;
+    case 3:
+      formData = {
+        IDPhotoFront: uploadID };
+
+      break;
+    case 4:
+      formData = {
+        IDPhotoBack: uploadID };
+
+      break;
+    case 5:
+      formData = {
+        BusinessLicenseFieldID: uploadID };
+
+      break;
+    case 6:
+      formData = {
+        BusinessLicenseFieldID: uploadID };
+
+      break;
+    case 7:
+      formData = {
+        BillPicture: uploadID };
+
+      break;
+    case 8:
+      formData = {
+        checkPicture: uploadID };
+
+      break;
+    case 9:
+      formData = {
+        AttachedPicture: uploadID };
+
+      break;}
+
+
+  wx.uploadFile({
+    url: url, //仅为示例，非真实的接口地址
+    filePath: filePath,
+    name: name,
+    formData: formData,
+    success: function success(res) {
+      console.log('证件上传成功', res);
+      //do something
+    },
+    fail: function fail(error) {
+      console.log('证件上传失败', error);
+    } });
+
+}
+module.exports = {
+  uploadFileServer: uploadFileServer };
+
+/***/ }),
+
+/***/ 83:
+/*!***********************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/components/uni-popup/popup.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -8475,10 +9713,10 @@ var config = {
 
 /***/ }),
 
-/***/ 50:
-/*!***************************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/components/uni-popup/message.js ***!
-  \***************************************************************/
+/***/ 84:
+/*!*************************************************************************!*\
+  !*** F:/Workspace/myproject/jxnmsc_uni/components/uni-popup/message.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8503,17 +9741,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         this.childrenMsg.close();
       }
     } } };exports.default = _default;
-
-/***/ }),
-
-/***/ 74:
-/*!***************************************************!*\
-  !*** F:/myproject/jxnmsc_uni/network/url_util.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js):\nError: ENOENT: no such file or directory, open 'F:\\myproject\\jxnmsc_uni\\network\\url_util.js'");
 
 /***/ })
 

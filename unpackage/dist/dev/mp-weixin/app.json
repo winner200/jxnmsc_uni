@@ -5,7 +5,15 @@
     "pages/profile/profile",
     "pages/global/login-tel/login-tel"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pages/bazaar-rijian/pages",
+      "pages": [
+        "index/index",
+        "inspect/inspect"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "食用农产品智慧优选通道",
